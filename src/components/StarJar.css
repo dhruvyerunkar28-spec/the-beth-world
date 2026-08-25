@@ -1,0 +1,269 @@
+.star-jar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.star-jar-interactive {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 820px;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .star-jar-interactive {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+/* Glass Jar Graphic */
+.glass-jar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  perspective: 600px;
+  transition: transform 0.3s ease;
+}
+
+.glass-jar-wrapper:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.jar-lid {
+  width: 90px;
+  height: 20px;
+  background: linear-gradient(180deg, #d8b4fe 0%, #a855f7 100%);
+  border-radius: 8px 8px 3px 3px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.jar-lid-knob {
+  position: absolute;
+  top: -8px;
+  width: 24px;
+  height: 8px;
+  background: #f5d0fe;
+  border-radius: 4px 4px 0 0;
+}
+
+.jar-body {
+  width: 140px;
+  height: 180px;
+  background: rgba(168, 85, 247, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(216, 180, 254, 0.4);
+  border-top: none;
+  border-radius: 4px 4px 30px 30px;
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    inset 0 0 25px rgba(244, 114, 182, 0.25),
+    0 0 30px rgba(168, 85, 247, 0.2);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jar-glare {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 15px;
+  height: 80%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+  border-radius: 10px;
+  filter: blur(1px);
+}
+
+.jar-stars-inside {
+  position: absolute;
+  inset: 0;
+}
+
+.floating-jar-star {
+  position: absolute;
+  color: #fde047;
+  font-size: 1.1rem;
+  text-shadow: 0 0 8px #fde047;
+  animation: starFloatInside 3s ease-in-out infinite alternate;
+}
+
+@keyframes starFloatInside {
+  0% { transform: translateY(0) scale(0.9); opacity: 0.6; }
+  100% { transform: translateY(-8px) scale(1.15); opacity: 1; }
+}
+
+.jar-label {
+  position: relative;
+  background: rgba(15, 7, 28, 0.85);
+  border: 1px dashed rgba(244, 114, 182, 0.5);
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  z-index: 2;
+}
+
+.jar-label span {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: #d8b4fe;
+  display: block;
+}
+
+.jar-label strong {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: #fce7f3;
+}
+
+.draw-star-btn {
+  margin-top: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.35);
+}
+
+/* Revealed Star Card */
+.revealed-star-container {
+  flex: 1;
+  width: 100%;
+}
+
+.empty-state-jar {
+  background: rgba(26, 14, 44, 0.6);
+  border: 1px dashed rgba(216, 180, 254, 0.3);
+  border-radius: 20px;
+  padding: 36px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #d8b4fe;
+}
+
+.empty-jar-icon {
+  color: #fde047;
+  opacity: 0.6;
+  animation: pulseJar 2s infinite ease-in-out;
+}
+
+@keyframes pulseJar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.revealed-star-card {
+  background: linear-gradient(180deg, rgba(32, 16, 52, 0.85) 0%, rgba(20, 10, 32, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(244, 114, 182, 0.4);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow:
+    0 16px 45px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(217, 70, 239, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.animate-star-reveal {
+  animation: revealCard 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes revealCard {
+  from { opacity: 0; transform: scale(0.9) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animating-shake {
+  animation: shakeJar 0.4s ease-in-out;
+}
+
+@keyframes shakeJar {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.star-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(244, 114, 182, 0.15);
+  border: 1px solid rgba(244, 114, 182, 0.4);
+  color: #f472b6;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.star-heart {
+  color: #ec4899;
+}
+
+.star-reason-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.65rem;
+  line-height: 1.45;
+  color: #fff1f2;
+  font-weight: 500;
+}
+
+.star-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(216, 180, 254, 0.15);
+  padding-top: 14px;
+}
+
+.progress-badge {
+  font-size: 0.75rem;
+  color: #c084fc;
+}
+
+.draw-again-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(216, 180, 254, 0.35);
+  color: #f5d0fe;
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.draw-again-btn:hover {
+  background: rgba(168, 85, 247, 0.4);
+  color: white;
+}

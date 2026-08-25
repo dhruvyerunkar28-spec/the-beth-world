@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap");
+
+.beth-world-root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* ==========================================================================
+   ACT 1: INTRO GATE SCENE
+   ========================================================================== */
+
+.intro-scene-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Silhouette Tree */
+.tree-container {
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  width: min(55vw, 680px);
+  height: 70%;
+  transform: translateX(-50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tree-trunk {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 18%;
+  height: 58%;
+  transform: translateX(-50%);
+  border-radius: 48% 52% 15% 15%;
+  background: linear-gradient(90deg, #1c0f24, #442248 35%, #5a2e54 55%, #220e2c);
+  box-shadow:
+    inset 15px 0 20px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(205, 105, 255, 0.2);
+}
+
+.tree-crown {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 45%,
+    #f4a6e3 0%,
+    #b960b8 35%,
+    #693284 70%,
+    #261042 100%
+  );
+  box-shadow:
+    0 0 45px rgba(222, 109, 235, 0.35),
+    inset -15px -20px 40px rgba(27, 10, 45, 0.4);
+}
+
+.crown-one {
+  width: 58%;
+  height: 35%;
+  left: 2%;
+  top: 14%;
+}
+
+.crown-two {
+  width: 57%;
+  height: 37%;
+  right: 0;
+  top: 8%;
+}
+
+.crown-three {
+  width: 60%;
+  height: 38%;
+  left: 20%;
+  top: -3%;
+}
+
+.crown-four {
+  width: 50%;
+  height: 34%;
+  left: 25%;
+  top: 27%;
+}
+
+.tree-glow {
+  position: absolute;
+  width: 80%;
+  height: 70%;
+  left: 10%;
+  top: 5%;
+  border-radius: 50%;
+  background: rgba(224, 102, 255, 0.16);
+  filter: blur(50px);
+}
+
+/* Silhouette Houses */
+.village-houses {
+  position: absolute;
+  bottom: 4%;
+  left: 0;
+  width: 100%;
+  height: 28%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.house {
+  position: absolute;
+  bottom: 10%;
+  width: 110px;
+  height: 80px;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #1e0d29, #331a3d);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.house::before {
+  content: "";
+  position: absolute;
+  top: -38px;
+  left: -10px;
+  width: 130px;
+  height: 55px;
+  background: linear-gradient(145deg, #3d1b46, #1c0c27);
+  clip-path: polygon(50% 0, 100% 75%, 0 75%);
+}
+
+.window-glow {
+  position: absolute;
+  width: 22px;
+  height: 26px;
+  background: #ffbd63;
+  left: 44px;
+  top: 30px;
+  box-shadow: 0 0 25px rgba(255, 174, 74, 0.7);
+  border-radius: 2px;
+}
+
+.house-one { left: 8%; }
+.house-two { right: 9%; transform: scale(0.85); }
+.house-three { left: 23%; bottom: 5%; transform: scale(0.65); }
+
+/* Glowing Path */
+.path-glow {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  width: 35%;
+  height: 42%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    rgba(168, 85, 247, 0.08),
+    rgba(236, 72, 153, 0.25)
+  );
+  clip-path: polygon(45% 0, 55% 0, 100% 100%, 0 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Intro Hero Content */
+.intro-hero-box {
+  position: relative;
+  z-index: 10;
+  width: min(92%, 620px);
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro-badge {
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #f5d0fe;
+  margin-bottom: 14px;
+  font-weight: 500;
+  text-shadow: 0 0 12px rgba(244, 114, 182, 0.5);
+}
+
+.intro-name-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3.8rem, 10vw, 6.8rem);
+  font-weight: 600;
+  line-height: 0.95;
+  color: #fff1f2;
+  text-shadow:
+    0 0 30px rgba(236, 72, 153, 0.5),
+    0 0 80px rgba(168, 85, 247, 0.35);
+  margin-bottom: 20px;
+}
+
+.intro-message-box {
+  max-width: 520px;
+  margin: 0 auto 28px;
+  color: rgba(254, 242, 248, 0.9);
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.enter-portal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(244, 114, 182, 0.55);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.35) 0%, rgba(236, 72, 153, 0.35) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: white;
+  padding: 16px 36px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(217, 70, 239, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-sparkle {
+  color: #fde047;
+  animation: pulseSparkle 2s infinite ease-in-out;
+}
+
+@keyframes pulseSparkle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+/* ==========================================================================
+   ACT 2: REALM HERO & SECTIONS
+   ========================================================================== */
+
+.world-content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 120px;
+}
+
+.realm-hero-header {
+  padding: 100px 20px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.realm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(168, 85, 247, 0.18);
+  border: 1px solid rgba(216, 180, 254, 0.35);
+  color: #f5d0fe;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.realm-main-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3.2rem, 9vw, 6.2rem);
+  font-weight: 600;
+  line-height: 1;
+  color: #fff1f2;
+  text-shadow:
+    0 0 35px rgba(244, 114, 182, 0.5),
+    0 0 80px rgba(168, 85, 247, 0.3);
+  margin-bottom: 14px;
+}
+
+.realm-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: rgba(245, 208, 254, 0.85);
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+.realm-scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 36px;
+  color: rgba(216, 180, 254, 0.7);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bounce-arrow {
+  animation: bounceDown 2s infinite ease-in-out;
+  color: #f472b6;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* Common Section Card Architecture */
+.realm-sections-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.beth-card-section {
+  width: 100%;
+  background: rgba(20, 10, 35, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(216, 180, 254, 0.2);
+  border-radius: 28px;
+  padding: 45px 35px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(168, 85, 247, 0.12);
+  scroll-margin-top: 40px;
+  transition: border-color 0.3s ease;
+}
+
+.beth-card-section:hover {
+  border-color: rgba(244, 114, 182, 0.35);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f472b6;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.section-heading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 600;
+  color: #fff1f2;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.section-subtext {
+  font-size: 0.92rem;
+  color: rgba(245, 208, 254, 0.8);
+  max-width: 550px;
+  line-height: 1.6;
+}
+
+/* Realm Footer */
+.realm-footer {
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.footer-glow-line {
+  width: min(85%, 600px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(244, 114, 182, 0.6), transparent);
+  margin-bottom: 25px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-sign {
+  font-size: 0.95rem;
+  color: #f5d0fe;
+}
+
+.footer-sign strong {
+  color: #fff1f2;
+  font-weight: 600;
+}
+
+.footer-date {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(216, 180, 254, 0.6);
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .beth-card-section {
+    padding: 30px 18px;
+    border-radius: 20px;
+  }
+
+  .intro-name-title {
+    font-size: clamp(3.2rem, 14vw, 4.5rem);
+  }
+
+  .tree-container {
+    width: 110vw;
+    height: 55%;
+  }
+
+  .house {
+    width: 75px;
+    height: 55px;
+  }
+
+  .house::before {
+    width: 90px;
+    height: 42px;
+    top: -28px;
+  }
+
+  .window-glow {
+    width: 16px;
+    height: 18px;
+    left: 28px;
+    top: 20px;
+  }
+}

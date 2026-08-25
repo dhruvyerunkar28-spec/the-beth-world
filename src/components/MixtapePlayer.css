@@ -1,0 +1,318 @@
+.mixtape-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mixtape-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  max-width: 680px;
+  margin-top: 15px;
+}
+
+/* Cassette Tape Graphic */
+.cassette-tape {
+  width: 100%;
+  max-width: 440px;
+  height: 240px;
+  background: linear-gradient(145deg, #2b173d 0%, #170a24 100%);
+  border: 2px solid rgba(216, 180, 254, 0.4);
+  border-radius: 20px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.7),
+    inset 0 0 15px rgba(244, 114, 182, 0.2),
+    0 0 30px rgba(168, 85, 247, 0.25);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.tape-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1.5px solid rgba(244, 114, 182, 0.4);
+  padding-bottom: 8px;
+}
+
+.tape-brand {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: #fbcfe8;
+}
+
+.tape-side {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #fde047;
+  font-weight: 600;
+}
+
+.tape-label-window {
+  background: linear-gradient(180deg, #fdf2f8 0%, #fae8ff 100%);
+  border-radius: 12px;
+  height: 110px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tape-reel {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #1e1b4b;
+  border: 4px solid #d8b4fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.reel-teeth {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  position: relative;
+}
+
+.reel-teeth::before,
+.reel-teeth::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1e1b4b;
+}
+
+.reel-teeth::before {
+  width: 6px;
+  height: 26px;
+}
+
+.reel-teeth::after {
+  width: 26px;
+  height: 6px;
+}
+
+.tape-reel.spinning {
+  animation: rotateReel 3s linear infinite;
+}
+
+@keyframes rotateReel {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.tape-window-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 10px;
+}
+
+.tape-spool-line {
+  width: 80%;
+  height: 12px;
+  background: #3b0764;
+  border-radius: 6px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.tape-current-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e1b4b;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.tape-bottom-screw-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.screw {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #a855f7;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.tape-notch {
+  width: 140px;
+  height: 14px;
+  background: #13071d;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  border-top: 1px solid rgba(216, 180, 254, 0.3);
+}
+
+/* Controls Card */
+.mixtape-controls-card {
+  width: 100%;
+  background: rgba(28, 14, 46, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(216, 180, 254, 0.25);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.track-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.track-vibe-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  color: #f472b6;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  background: rgba(244, 114, 182, 0.15);
+  padding: 3px 12px;
+  border-radius: 999px;
+  margin-bottom: 4px;
+}
+
+.track-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.7rem;
+  color: #fff1f2;
+}
+
+.track-artist {
+  font-size: 0.85rem;
+  color: #d8b4fe;
+}
+
+.track-description {
+  font-size: 0.9rem;
+  color: rgba(245, 208, 254, 0.85);
+  font-style: italic;
+  margin-top: 6px;
+  max-width: 480px;
+}
+
+.mixtape-action-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.tape-nav-btn {
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(216, 180, 254, 0.3);
+  color: #f5d0fe;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tape-nav-btn:hover {
+  background: rgba(168, 85, 247, 0.45);
+  color: white;
+  transform: scale(1.08);
+}
+
+.tape-play-main-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+  transition: all 0.2s ease;
+}
+
+.tape-play-main-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.7);
+}
+
+.tape-play-main-btn.active-playing {
+  animation: pulseGlow 2.5s infinite;
+}
+
+.track-playlist-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+  border-top: 1px solid rgba(216, 180, 254, 0.15);
+  padding-top: 14px;
+}
+
+.playlist-item-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 7, 28, 0.6);
+  border: 1px solid rgba(216, 180, 254, 0.2);
+  color: #d8b4fe;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.playlist-item-btn:hover {
+  background: rgba(168, 85, 247, 0.25);
+  color: white;
+}
+
+.playlist-item-btn.active {
+  background: rgba(244, 114, 182, 0.25);
+  border-color: #f472b6;
+  color: #fff1f2;
+}
+
+.track-idx {
+  font-weight: 700;
+  color: #f472b6;
+}

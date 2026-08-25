@@ -1,0 +1,246 @@
+.final-surprise-clean-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 860px;
+  padding: 40px 20px 60px;
+  position: relative;
+  scroll-margin-top: 50px;
+}
+
+/* Top Wish Header */
+.final-top-wish-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.final-wish-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #fde047;
+  font-weight: 700;
+  background: rgba(253, 224, 71, 0.12);
+  border: 1px solid rgba(253, 224, 71, 0.35);
+  padding: 5px 16px;
+  border-radius: 999px;
+  text-shadow: 0 0 10px rgba(253, 224, 71, 0.5);
+}
+
+.final-wish-main-heading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  font-weight: 600;
+  color: #fff1f2;
+  line-height: 1.15;
+  text-shadow:
+    0 0 25px rgba(244, 114, 182, 0.6),
+    0 0 60px rgba(236, 72, 153, 0.35);
+  max-width: 720px;
+}
+
+/* Isolated Necklace Floating on Night Background */
+.isolated-necklace-stage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 25px;
+  position: relative;
+}
+
+.necklace-float-container {
+  position: relative;
+  width: min(90vw, 360px);
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: gentleFloat 5s ease-in-out infinite alternate;
+}
+
+@keyframes gentleFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-12px) rotate(0.8deg); }
+}
+
+.isolated-pendant-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 25px rgba(251, 191, 36, 0.55)) drop-shadow(0 0 60px rgba(244, 114, 182, 0.3));
+  transition: transform 0.4s ease, filter 0.4s ease;
+  user-select: none;
+  pointer-events: auto;
+}
+
+.necklace-float-container:hover .isolated-pendant-img {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 35px rgba(251, 191, 36, 0.8)) drop-shadow(0 0 80px rgba(236, 72, 153, 0.5));
+}
+
+.necklace-soft-glow {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.18) 0%, rgba(236, 72, 153, 0.08) 50%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Starlight Glints */
+.isolated-sparkle {
+  position: absolute;
+  color: #fde047;
+  font-size: 1.4rem;
+  text-shadow: 0 0 12px #fde047;
+  pointer-events: none;
+  animation: glintTwinkle 3s infinite ease-in-out alternate;
+}
+
+.is1 { top: 28%; right: 18%; animation-delay: 0s; font-size: 1.6rem; }
+.is2 { bottom: 22%; left: 16%; animation-delay: 1.2s; font-size: 1.2rem; }
+.is3 { top: 58%; right: 24%; animation-delay: 2.1s; font-size: 1.4rem; }
+
+@keyframes glintTwinkle {
+  0% { transform: scale(0.5) rotate(0deg); opacity: 0.3; }
+  100% { transform: scale(1.4) rotate(45deg); opacity: 1; text-shadow: 0 0 20px #ffffff, 0 0 30px #fde047; }
+}
+
+/* Heart & Messages */
+.final-heart-message-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.heart-icon-glow {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(236, 72, 153, 0.18);
+  border: 1.5px solid rgba(244, 114, 182, 0.5);
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f472b6;
+}
+
+.heart-pulse-anim {
+  animation: heartThrob 1.6s ease-in-out infinite;
+}
+
+@keyframes heartThrob {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.22); }
+}
+
+.final-message-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message-line {
+  font-family: "Cormorant Garamond", serif;
+  line-height: 1.35;
+  color: #fff1f2;
+}
+
+.chance-line {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-style: italic;
+  color: #fce7f3;
+  text-shadow: 0 0 15px rgba(244, 114, 182, 0.4);
+}
+
+.call-line {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 700;
+  color: #fef08a;
+  text-shadow: 0 0 20px rgba(253, 224, 71, 0.6);
+  letter-spacing: 0.03em;
+}
+
+.love-line {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 700;
+  color: #f472b6;
+  text-shadow: 0 0 25px rgba(244, 114, 182, 0.7);
+  letter-spacing: 0.05em;
+}
+
+/* Action Buttons */
+.final-action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.final-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+}
+
+.call-dhruv-btn {
+  background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+  color: white;
+  box-shadow:
+    0 8px 30px rgba(236, 72, 153, 0.5),
+    0 0 25px rgba(168, 85, 247, 0.4);
+}
+
+.call-dhruv-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 12px 40px rgba(236, 72, 153, 0.7),
+    0 0 35px rgba(168, 85, 247, 0.6);
+}
+
+.message-dhruv-btn {
+  background: rgba(168, 85, 247, 0.22);
+  border: 1.5px solid rgba(216, 180, 254, 0.45);
+  color: #f5d0fe;
+  backdrop-filter: blur(12px);
+}
+
+.message-dhruv-btn:hover {
+  background: rgba(168, 85, 247, 0.45);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(216, 180, 254, 0.4);
+}
+
+@media (max-width: 600px) {
+  .necklace-float-container {
+    height: 300px;
+  }
+}

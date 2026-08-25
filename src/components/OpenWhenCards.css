@@ -1,0 +1,170 @@
+.open-when-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.open-when-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 860px;
+  margin-top: 10px;
+}
+
+.open-when-card {
+  background: rgba(26, 14, 44, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(216, 180, 254, 0.25);
+  border-radius: 18px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.open-when-card:hover {
+  transform: translateY(-5px);
+  background: rgba(38, 20, 64, 0.85);
+}
+
+.card-icon-bubble {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.open-when-card:hover .card-icon-bubble {
+  transform: scale(1.12) rotate(4deg);
+}
+
+.card-trigger-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  color: #fff1f2;
+  line-height: 1.35;
+}
+
+.card-tap-badge {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* Modal */
+.open-when-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.open-when-modal-card {
+  background: linear-gradient(180deg, #221035 0%, #150924 100%);
+  border: 1px solid rgba(244, 114, 182, 0.4);
+  border-radius: 24px;
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.8),
+    0 0 35px rgba(217, 70, 239, 0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.animate-modal-pop {
+  animation: popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-icon-header {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.modal-letter-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  color: #fff1f2;
+  margin-bottom: 18px;
+}
+
+.modal-letter-content {
+  background: rgba(10, 4, 18, 0.5);
+  border: 1px solid rgba(216, 180, 254, 0.15);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.modal-letter-content p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #fce7f3;
+  font-style: italic;
+}
+
+.modal-letter-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(216, 180, 254, 0.15);
+  padding-top: 16px;
+}
+
+.footer-signature {
+  font-size: 0.85rem;
+  color: #d8b4fe;
+  font-weight: 500;
+}
+
+.modal-close-pill {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}

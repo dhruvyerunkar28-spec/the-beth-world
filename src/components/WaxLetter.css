@@ -1,0 +1,324 @@
+.wax-letter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.wax-letter-container {
+  width: 100%;
+  max-width: 680px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Sealed Envelope */
+.sealed-envelope {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 300px;
+  background: linear-gradient(145deg, #2a163a, #1d0f28);
+  border: 1px solid rgba(216, 180, 254, 0.35);
+  border-radius: 16px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(168, 85, 247, 0.2);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sealed-envelope:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(217, 70, 239, 0.35);
+}
+
+.envelope-top-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, #381e4d, #251234);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  border-bottom: 1px solid rgba(216, 180, 254, 0.2);
+  z-index: 2;
+}
+
+.envelope-pocket {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  z-index: 1;
+}
+
+.envelope-stamps {
+  align-self: flex-end;
+  border: 1px dashed rgba(244, 114, 182, 0.6);
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(147, 51, 234, 0.15);
+}
+
+.stamp-icon {
+  color: #f472b6;
+  font-size: 0.9rem;
+}
+
+.stamp-text {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: #f5d0fe;
+  font-weight: 600;
+}
+
+.envelope-address {
+  text-align: left;
+}
+
+.to-line {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  color: #fff1f2;
+  margin-bottom: 2px;
+}
+
+.sub-line {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(244, 208, 254, 0.7);
+}
+
+/* Wax Seal Button */
+.wax-seal-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.wax-seal-outer {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #e11d48, #881337, #4c0519);
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(225, 29, 72, 0.6),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wax-seal-button:hover .wax-seal-outer {
+  transform: scale(1.1);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.7),
+    0 0 35px rgba(244, 63, 94, 0.8);
+}
+
+.wax-seal-inner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 228, 230, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.seal-monogram {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffe4e6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.seal-instruction {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: #fde047;
+  text-shadow: 0 0 10px rgba(253, 224, 71, 0.8);
+  animation: pulseInstruction 2s infinite ease-in-out;
+}
+
+@keyframes pulseInstruction {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+/* Unfolded Parchment */
+.unfolded-parchment {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(25, 12, 38, 0.92) 0%, rgba(18, 9, 28, 0.96) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(244, 114, 182, 0.35);
+  border-radius: 20px;
+  padding: 32px 36px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 35px rgba(168, 85, 247, 0.2);
+  text-align: left;
+  position: relative;
+}
+
+.animate-unfold {
+  animation: unfoldLetter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes unfoldLetter {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.parchment-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(216, 180, 254, 0.2);
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+}
+
+.parchment-date {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #d8b4fe;
+}
+
+.close-letter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(216, 180, 254, 0.3);
+  color: #f5d0fe;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.close-letter-btn:hover {
+  background: rgba(168, 85, 247, 0.35);
+  color: white;
+}
+
+.letter-body-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.letter-salutation {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.2rem;
+  color: #fff1f2;
+  font-weight: 600;
+  text-shadow: 0 0 15px rgba(244, 114, 182, 0.4);
+}
+
+.letter-intro-p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #fce7f3;
+  font-weight: 500;
+}
+
+.letter-para {
+  font-size: 0.98rem;
+  line-height: 1.85;
+  color: rgba(245, 208, 254, 0.9);
+}
+
+.letter-closing-section {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.closing-line {
+  font-size: 0.95rem;
+  color: #d8b4fe;
+  font-style: italic;
+}
+
+.signature-line {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  color: #fbcfe8;
+  text-shadow: 0 0 20px rgba(244, 114, 182, 0.5);
+}
+
+.letter-ps-box {
+  margin-top: 15px;
+  padding: 12px 18px;
+  background: rgba(147, 51, 234, 0.15);
+  border-left: 3px solid #f472b6;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: #fbcfe8;
+  font-style: italic;
+}
+
+.parchment-footer-decor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(216, 180, 254, 0.15);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(216, 180, 254, 0.6);
+}
+
+.decor-sparkle {
+  color: #f472b6;
+}
+
+@media (max-width: 600px) {
+  .unfolded-parchment {
+    padding: 22px 18px;
+  }
+  .letter-salutation {
+    font-size: 1.8rem;
+  }
+}

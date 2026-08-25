@@ -1,0 +1,41 @@
+:root {
+  --text: #e9d5ff;
+  --text-h: #fff1f2;
+  --bg: #080414;
+  --accent: #d946ef;
+  --accent-glow: rgba(217, 70, 239, 0.4);
+  --sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --serif: "Cormorant Garamond", Georgia, serif;
+
+  font-family: var(--sans);
+  color-scheme: dark;
+  background-color: var(--bg);
+  color: var(--text);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  background: var(--bg);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  display: block;
+}
